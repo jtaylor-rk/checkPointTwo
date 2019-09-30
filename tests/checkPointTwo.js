@@ -7,17 +7,7 @@ module.exports = {
     after: browser => {
         browser.end()
     },
-    'Palindrome': browser => {
-        pointTwo
-            .setValue('@palInput', test.pal)
-            .pause(2000)
-            .click('@palSubmit')
-            .verify.containsText('@palRes', 'true')
-            .clearValue('@palInput')
-            .setValue('@palInput', test.palTwo)
-            .click('@palSubmit')
-            .verify.containsText('@palRes', 'false')
-    },
+
     'Odds and Evens': browser => {
         pointTwo
             .setValue('@evenInput', test.evenOdds)
@@ -36,6 +26,17 @@ module.exports = {
             .setValue('@stringInput', test.string)
             .click('@stringSubmit')
             .verify.containsText('@stringRes', 'Tyler')
+    },
+    'Palindrome': browser => {
+        pointTwo
+            .setValue('@palInput', test.pal)
+            .pause(2000)
+            .click('@palSubmit')
+            .verify.containsText('@palRes', 'true')
+            .clearValue('@palInput')
+            .setValue('@palInput', test.palTwo)
+            .click('@palSubmit')
+            .verify.containsText('@palRes', 'false')
     },
     'Sum': browser => {
         pointTwo
